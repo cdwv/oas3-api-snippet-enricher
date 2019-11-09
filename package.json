@@ -1,0 +1,19 @@
+{
+  "name": "snippet-enricher",
+  "version": "0.0.1",
+  "description": "Enrich OpenAPI 3.0 JSON with code snippets (``x-code-samples``)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openapi",
+    "swagger",
+    "oas3"
+  ],
+  "author": "Andrzej WP",
+  "license": "MIT",
+  "dependencies": {
+    "swagger-snippet": "^0.6.1"
+  }
+}
