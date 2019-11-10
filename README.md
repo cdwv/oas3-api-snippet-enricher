@@ -19,6 +19,14 @@ Enrich your OAS 3.0 Schema!
 ```
 node index.js openapi.json > openapi-with-examples.json
 ```
+
+Alternatively you can point it to a YAML-formatted spec:
+```
+curl https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml --output petstore.yaml
+node index.js petstore.yaml > openapi-with-examples.json
+```
+
+
 Use [ReDoc](https://github.com/Redocly/redoc/) to build beautiful API doc:
 ```
 redoc-cli bundle openapi-with-examples.json
