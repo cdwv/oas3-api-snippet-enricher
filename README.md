@@ -27,3 +27,21 @@ redoc-cli bundle openapi-with-examples.json
 enjoy.
 
 ![ReDoc API documentation with code samples](image.png)
+
+Contributing
+=======================================================================
+
+Contributions are most welcome!
+
+
+License
+=======================================================================
+
+MIT
+
+Maintainers
+===========
+
+[<img width="300" title="Codewave.eu" src="cdwv-logo-new.svg">](http://codewave.eu)
+
+Project is currently maintained, in our spare time, by [codewave.eu](http://codewave.eu) and a growing number of Contributors!
