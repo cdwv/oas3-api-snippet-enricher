@@ -6,7 +6,7 @@ Thanks to the wonderful [swagger-snippet](https://github.com/ErikWittern/swagger
 2. ``npm install``
 3. ``node index.js your_oas.json``
 
-## Example with PetStore
+## Example Usage
 Clone this repo
 ```
 git clone https://github.com/cdwv/oas3-api-snippet-enricher
@@ -25,3 +25,5 @@ redoc-cli bundle openapi-with-examples.json
 ```
 
 enjoy.
+
+![ReDoc API documentation with code samples](image.png)
