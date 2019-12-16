@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const SwaggerSnippet = require('swagger-snippet');
+const OpenAPISnippet = require('openapi-snippet');
 const yaml = require('js-yaml');
 
 const targets = ['node_request','shell_curl', 'shell_httpie', 'python_python3', 'php_curl', 'php_http1', 'php_http2'];
@@ -10,7 +10,7 @@ function enrichSchema(schema){
 	for(var path in schema.paths){
 			
 		for(var method in schema.paths[path]){
-			var generatedCode = SwaggerSnippet.getEndpointSnippets(schema, path, method, targets);
+			var generatedCode = OpenAPISnippet.getEndpointSnippets(schema, path, method, targets);
 			schema.paths[path][method]["x-code-samples"] = [];
 			for(var snippetIdx in generatedCode.snippets){
 				var snippet = generatedCode.snippets[snippetIdx];

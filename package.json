@@ -15,6 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "swagger-snippet": "^0.6.1"
+    "openapi-snippet": "andrzejwp/swagger-snippet#patch-2"
   }
 }
