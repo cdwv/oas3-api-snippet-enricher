@@ -4,7 +4,7 @@ Thanks to the wonderful [swagger-snippet](https://github.com/ErikWittern/swagger
 
 1. Clone this repo
 2. ``npm install``
-3. ``node index.js your_oas.json``
+3. ``node index.js --input=your_oas.json``
 
 ## Example Usage
 Clone this repo
@@ -17,15 +17,19 @@ npm install
 ```
 Enrich your OAS 3.0 Schema!
 ```
-node index.js openapi.json > openapi-with-examples.json
+node index.js --input=openapi.json > openapi-with-examples.json
 ```
 
 Alternatively you can point it to a YAML-formatted spec:
 ```
 curl https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml --output petstore.yaml
-node index.js petstore.yaml > openapi-with-examples.json
+node index.js --input=petstore.yaml > openapi-with-examples.json
 ```
 
+Use targets options to specific languages:
+```
+node index.js --targets="node_request,shell_curl" --input=openapi.json >  > openapi-with-examples.json
+```
 
 Use [ReDoc](https://github.com/Redocly/redoc/) to build beautiful API doc:
 ```
