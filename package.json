@@ -1,6 +1,6 @@
 {
   "name": "snippet-enricher-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Enrich OpenAPI 3.0 JSON with code snippets (``x-code-samples``)",
   "repository": {
     "type": "git",
