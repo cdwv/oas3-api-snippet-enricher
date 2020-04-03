@@ -1,8 +1,15 @@
 {
-  "name": "snippet-enricher",
-  "version": "0.0.1",
+  "name": "snippet-enricher-cli",
+  "version": "0.0.2",
   "description": "Enrich OpenAPI 3.0 JSON with code snippets (``x-code-samples``)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdwv/oas3-api-snippet-enricher"
+  },
   "main": "index.js",
+  "bin": {
+    "snippet-enricher": "bin/snippet-enricher"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
