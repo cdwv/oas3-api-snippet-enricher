@@ -9,7 +9,7 @@ Thanks to the wonderful [swagger-snippet](https://github.com/ErikWittern/swagger
 
 Enrich your OAS 3.0 Schema
 ```
-./node_modules/.bin/snippet-enricher-cli openapi.json > openapi-with-examples.json
+./node_modules/.bin/snippet-enricher-cli --input=openapi.json > openapi-with-examples.json
 ```
 Alternatively you can point it to a YAML-formatted spec:
 ```
