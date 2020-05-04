@@ -1,6 +1,6 @@
 {
   "name": "snippet-enricher-cli",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Enrich OpenAPI 3.0 JSON with code snippets (``x-code-samples``)",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "bin": {
-    "snippet-enricher": "bin/snippet-enricher"
+    "snippet-enricher-cli": "bin/snippet-enricher-cli"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "openapi-snippet": "andrzejwp/swagger-snippet#patch-2",
+    "openapi-snippet": "^0.8.1",
     "yargs": "^15.3.1"
   }
 }
