@@ -1,8 +1,15 @@
 {
-  "name": "snippet-enricher",
-  "version": "0.0.1",
+  "name": "snippet-enricher-cli",
+  "version": "0.0.5",
   "description": "Enrich OpenAPI 3.0 JSON with code snippets (``x-code-samples``)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdwv/oas3-api-snippet-enricher"
+  },
   "main": "index.js",
+  "bin": {
+    "snippet-enricher-cli": "bin/snippet-enricher-cli"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "openapi-snippet": "andrzejwp/swagger-snippet#patch-2"
+    "openapi-snippet": "^0.8.1",
+    "yargs": "^15.3.1"
   }
 }
