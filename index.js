@@ -3,8 +3,13 @@
 const fs = require('fs');
 const OpenAPISnippet = require('openapi-snippet');
 const yaml = require('js-yaml');
+const args = require('yargs').argv;
 
-const targets = ['node_request','shell_curl', 'shell_httpie', 'python_python3', 'php_curl', 'php_http1', 'php_http2'];
+let targets = ['node_request','shell_curl', 'shell_httpie', 'python_python3', 'php_curl', 'php_http1', 'php_http2'];
+
+if (args.targets) {
+	targets = args.targets.split(',');
+}
 
 function enrichSchema(schema){
 	for(var path in schema.paths){
@@ -22,27 +27,26 @@ function enrichSchema(schema){
 	return schema;
 }
 
-if(process.argv.length < 3){
+if(!args.input){
 	throw new Error("Please pass the OpenAPI JSON schema as argument.");
 }
 
 // Try to interpret as YAML first, based on file extension
 
-if(process.argv[2].indexOf('yml') !== -1 || process.argv[2].indexOf('yaml') !== -1){
+if(args.input.indexOf('yml') !== -1 || args.input.indexOf('yaml') !== -1){
 	try {
 		
-		let schema = yaml.safeLoad(fs.readFileSync(process.argv[2], 'utf8'));
+		let schema = yaml.safeLoad(fs.readFileSync(args.input, 'utf8'));
 		schema = enrichSchema(schema);
 		console.log(JSON.stringify(schema));
 	} catch (e) {
 		// Do something with this
 		console.log(e);
-		
 	}
 	
 } else {
 	
-	fs.readFile(process.argv[2], (err, data) => {
+	fs.readFile(args.input, (err, data) => {
 		if (err) throw err;
 		let schema = JSON.parse(data);
 		schema = enrichSchema(schema);
