@@ -16,10 +16,10 @@ function enrichSchema(schema){
 			
 		for(var method in schema.paths[path]){
 			var generatedCode = OpenAPISnippet.getEndpointSnippets(schema, path, method, targets);
-			schema.paths[path][method]["x-code-samples"] = [];
+			schema.paths[path][method]["x-codeSamples"] = [];
 			for(var snippetIdx in generatedCode.snippets){
 				var snippet = generatedCode.snippets[snippetIdx];
-				schema.paths[path][method]["x-code-samples"][snippetIdx] = { "lang": snippet.title, "source": snippet.content };
+				schema.paths[path][method]["x-codeSamples"][snippetIdx] = { "lang": snippet.title, "source": snippet.content };
 			}
 			
 		}
