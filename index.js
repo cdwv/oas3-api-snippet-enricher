@@ -15,6 +15,7 @@ function enrichSchema(schema){
 	for(var path in schema.paths){
 			
 		for(var method in schema.paths[path]){
+			if (method.indexOf('x-') === 0) continue;
 			var generatedCode = OpenAPISnippet.getEndpointSnippets(schema, path, method, targets);
 			schema.paths[path][method]["x-codeSamples"] = [];
 			for(var snippetIdx in generatedCode.snippets){
