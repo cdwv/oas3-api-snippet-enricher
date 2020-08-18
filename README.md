@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples
 
 Use targets options to specific languages:
 ```
-./node_modules/.bin/snippet-enricher-cli --targets="node_request,shell_curl" --input=openapi.json >  > openapi-with-examples.json
+./node_modules/.bin/snippet-enricher-cli --targets="node_request,shell_curl" --input=openapi.json > openapi-with-examples.json
 ```
 
 Use [ReDoc](https://github.com/Redocly/redoc/) to build beautiful API doc:
