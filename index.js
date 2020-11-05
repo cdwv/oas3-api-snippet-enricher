@@ -15,13 +15,18 @@ function enrichSchema(schema){
 	for(var path in schema.paths){
 			
 		for(var method in schema.paths[path]){
-			var generatedCode = OpenAPISnippet.getEndpointSnippets(schema, path, method, targets);
-			schema.paths[path][method]["x-codeSamples"] = [];
-			for(var snippetIdx in generatedCode.snippets){
-				var snippet = generatedCode.snippets[snippetIdx];
-				schema.paths[path][method]["x-codeSamples"][snippetIdx] = { "lang": snippet.title, "source": snippet.content };
-			}
-			
+			if (method.indexOf('x-') === 0) continue;
+			try {
+        var generatedCode = OpenAPISnippet.getEndpointSnippets(schema, path, method, targets);
+        schema.paths[path][method]["x-codeSamples"] = [];
+        for(var snippetIdx in generatedCode.snippets){
+          var snippet = generatedCode.snippets[snippetIdx];
+          schema.paths[path][method]["x-codeSamples"][snippetIdx] = { "lang": snippet.title, "source": snippet.content };
+        }
+      }
+      catch (err) {
+        console.error(`Error while processing "${method}" "${path}"\n`, err);
+      }
 		}
 	}
 	return schema;
