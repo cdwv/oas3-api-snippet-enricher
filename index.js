@@ -5,7 +5,7 @@ const OpenAPISnippet = require('openapi-snippet');
 const yaml = require('js-yaml');
 const args = require('yargs').argv;
 
-let targets = ['node_axios', 'node_fetch', 'node_request','shell_curl', 'shell_httpie', 'python_python3', 'php_curl', 'php_http1', 'php_http2'];
+let targets = ['node_axios', 'node_fetch', 'shell_curl', 'shell_httpie', 'python_python3', 'php_curl', 'php_http1', 'php_http2'];
 
 if (args.targets) {
 	targets = args.targets.split(',');
